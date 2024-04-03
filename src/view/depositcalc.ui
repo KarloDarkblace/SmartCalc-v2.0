@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DepositCalc</class>
+ <widget class="QWidget" name="DepositCalc">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>545</width>
+    <height>723</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>DEPOSIT CALCULATOR</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    color: #66FCF1;
+    background-color: #1c1c1c;
+}
+
+QPushButton:hover {
+	color: #1c1c1c;
+	border-radius: 4px;
+	border: 1px solid #1c1c1c;
+	background-color: #66FCF1;
+}
+
+QFrame#mainQFrame {
+	border: 2px solid #66FCF1;
+}
+
+QFrame#resultQFrame {
+	border: 1px solid #66FCF1;
+}
+
+QRadioButton, QLineEdit, QDateEdit, QComboBox, QPushButton, QTableWidget {
+    border: 1px solid #66FCF1;
+    border-radius: 2px;
+}
+
+QLineEdit, QDateEdit {
+    background-color: transparent;
+}
+
+QPushButton {
+    background-color: transparent;
+}
+
+QPushButton:pressed {
+    background-color: #45A29E;
+    color: #FFFFFF;
+}
+
+QCheckBox::indicator, QRadioButton::indicator {
+    border: 1px solid #66FCF1;
+    width: 10px;
+    height: 10px; 
+}
+
+QCheckBox::indicator:checked, QRadioButton::indicator:checked {
+    background-color: #66FCF1;
+}
+
+QMessageBox {
+    background-color: #1c1c1c;
+}
+
+QMessageBox QLabel {
+    color: #66FCF1;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #1c1c1c;
+    selection-background-color: #45A29E;
+}
+
+QTableWidget {
+    gridline-color: #66FCF1;
+}</string>
+  </property>
+  <widget class="QFrame" name="mainQFrame">
+   <property name="geometry">
+    <rect>
+     <x>4</x>
+     <y>4</y>
+     <width>537</width>
+     <height>715</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>7</x>
+      <y>6</y>
+      <width>520</width>
+      <height>373</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="mainQGridLayout">
+     <item row="3" column="0">
+      <widget class="QLabel" name="interestRateQLabel">
+       <property name="text">
+        <string>Interest rate</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="postingPeriodQLineEdit">
+       <property name="maxLength">
+        <number>4</number>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QCheckBox" name="capitalizationQCheckBox">
+       <property name="text">
+        <string>Interest capitalization</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="2">
+      <widget class="QLineEdit" name="replenishmentsQLineEdit"/>
+     </item>
+     <item row="3" column="2">
+      <widget class="QLabel" name="procentQLabel_2">
+       <property name="text">
+        <string>%</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="taxRateQLineEdit">
+       <property name="maxLength">
+        <number>5</number>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="1">
+      <widget class="QPushButton" name="withdrawalsAddQPushButton">
+       <property name="text">
+        <string>+ ADD</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QDateEdit" name="replenishmentsQDateEdit">
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="buttonSymbols">
+        <enum>QAbstractSpinBox::PlusMinus</enum>
+       </property>
+       <property name="minimumDate">
+        <date>
+         <year>2024</year>
+         <month>3</month>
+         <day>6</day>
+        </date>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="taxRateQLabel">
+       <property name="text">
+        <string>Tax rate</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="2">
+      <widget class="QPushButton" name="withdrawalsDeleteQPushButton">
+       <property name="text">
+        <string>- DELETE</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="QDateEdit" name="withdrawalsQDateEdit">
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="buttonSymbols">
+        <enum>QAbstractSpinBox::PlusMinus</enum>
+       </property>
+       <property name="minimumDate">
+        <date>
+         <year>2024</year>
+         <month>3</month>
+         <day>6</day>
+        </date>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0">
+      <widget class="QLabel" name="withdrawalsQLabel_2">
+       <property name="text">
+        <string>Partial withdrawals</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QLabel" name="procentQLabel">
+       <property name="text">
+        <string>%</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QComboBox" name="postingPeriodQComboBox">
+       <property name="currentIndex">
+        <number>1</number>
+       </property>
+       <item>
+        <property name="text">
+         <string>DAYS</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>MONTHS</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>YEARS</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="7" column="1">
+      <widget class="QPushButton" name="replenishmentsAddQPushButton">
+       <property name="text">
+        <string>+ ADD</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="postingQLabel">
+       <property name="text">
+        <string>Posting period</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="2">
+      <widget class="QPushButton" name="replenishmentsDeleteQPushButton">
+       <property name="text">
+        <string>- DELETE</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="2">
+      <widget class="QLineEdit" name="withdrawalsQLineEdit"/>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLabel" name="rubQLabel">
+       <property name="text">
+        <string>RUB</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="depositQLabel">
+       <property name="text">
+        <string>Deposit amount</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="frequencyQLabel">
+       <property name="text">
+        <string>Frequency of payments</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QComboBox" name="frequencyOfPaymentsQComboBox">
+       <item>
+        <property name="text">
+         <string>every day</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>every week</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>once a month</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>once a year</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="depositAmountQLineEdit"/>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="replenishmentsQLabel_2">
+       <property name="text">
+        <string>Replenishments</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="interestRateQLineEdit">
+       <property name="maxLength">
+        <number>5</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="gridLayoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>8</x>
+      <y>383</y>
+      <width>520</width>
+      <height>224</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="tablesQGridLayout">
+     <item row="1" column="0">
+      <widget class="QTableWidget" name="replenishmentsQTableWidget">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="editTriggers">
+        <set>QAbstractItemView::NoEditTriggers</set>
+       </property>
+       <property name="selectionMode">
+        <enum>QAbstractItemView::SingleSelection</enum>
+       </property>
+       <property name="sortingEnabled">
+        <bool>true</bool>
+       </property>
+       <attribute name="horizontalHeaderStretchLastSection">
+        <bool>true</bool>
+       </attribute>
+       <column>
+        <property name="text">
+         <string>Date</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Amount</string>
+        </property>
+        <property name="textAlignment">
+         <set>AlignCenter</set>
+        </property>
+       </column>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="withdrawalsQLabel">
+       <property name="text">
+        <string>Withdrawals</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QTableWidget" name="withdrawalsQTableWidget">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="editTriggers">
+        <set>QAbstractItemView::NoEditTriggers</set>
+       </property>
+       <property name="sortingEnabled">
+        <bool>true</bool>
+       </property>
+       <attribute name="horizontalHeaderStretchLastSection">
+        <bool>true</bool>
+       </attribute>
+       <column>
+        <property name="text">
+         <string>Date</string>
+        </property>
+        <property name="font">
+         <font>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Amount</string>
+        </property>
+       </column>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="replenishmentsQLabel">
+       <property name="text">
+        <string>Replenishments</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QPushButton" name="calculateQPushButton">
+    <property name="geometry">
+     <rect>
+      <x>364</x>
+      <y>633</y>
+      <width>162</width>
+      <height>52</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>13</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>CALCULATE</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="resultQFrame">
+    <property name="geometry">
+     <rect>
+      <x>8</x>
+      <y>613</y>
+      <width>348</width>
+      <height>94</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QWidget" name="gridLayoutWidget_3">
+     <property name="geometry">
+      <rect>
+       <x>1</x>
+       <y>7</y>
+       <width>346</width>
+       <height>86</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="resultQGridLayout">
+      <property name="sizeConstraint">
+       <enum>QLayout::SetFixedSize</enum>
+      </property>
+      <item row="0" column="1">
+       <widget class="QLabel" name="accruedInterestOutputQLabel">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>170</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Ubuntu Mono</family>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="accruedInterestQLabel">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>160</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Ubuntu Mono</family>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Accrued interest:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="taxAmountQLabel">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>160</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Ubuntu Mono</family>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Tax amount:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="finalBalanceQLabel">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>160</width>
+          <height>23</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Ubuntu Mono</family>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Final balance:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLabel" name="taxAmountOutputQLabel">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>170</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Ubuntu Mono</family>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLabel" name="finalBanaceOutputQLabel">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>170</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Ubuntu Mono</family>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>postingPeriodQLineEdit</tabstop>
+  <tabstop>capitalizationQCheckBox</tabstop>
+  <tabstop>replenishmentsQLineEdit</tabstop>
+  <tabstop>taxRateQLineEdit</tabstop>
+  <tabstop>withdrawalsAddQPushButton</tabstop>
+  <tabstop>replenishmentsQDateEdit</tabstop>
+  <tabstop>withdrawalsDeleteQPushButton</tabstop>
+  <tabstop>withdrawalsQDateEdit</tabstop>
+  <tabstop>calculateQPushButton</tabstop>
+  <tabstop>postingPeriodQComboBox</tabstop>
+  <tabstop>replenishmentsAddQPushButton</tabstop>
+  <tabstop>replenishmentsDeleteQPushButton</tabstop>
+  <tabstop>withdrawalsQLineEdit</tabstop>
+  <tabstop>frequencyOfPaymentsQComboBox</tabstop>
+  <tabstop>depositAmountQLineEdit</tabstop>
+  <tabstop>interestRateQLineEdit</tabstop>
+  <tabstop>replenishmentsQTableWidget</tabstop>
+  <tabstop>withdrawalsQTableWidget</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
